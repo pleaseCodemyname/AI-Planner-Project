@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Event</title>
+  <link rel="stylesheet" href="a.css">
+  <style>
+    .dropdown-btn {
+      background-color: #f1f1f1;
+      border: none;
+      color: black;
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .dropdown-submenu {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown-submenu a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-submenu a:hover {
+      background-color: #f1f1f1;
+    }
+
+    .dropdown:hover .dropdown-submenu {
+      display: block;
+    }
+
+    #header {
+      display: flex;
+      justify-content: space-between;
+      /* This will push the buttons to the left and right edges */
+      align-items: center;
+      /* To vertically center the buttons */
+    }
+
+    #header button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+</style>
+</head>
+
+<body>
+  <form action="/event_add" method="post">
+    <div id="header">
+      <button>목표</button>
+      <button>일정</button>
+      <button>할일</button>
+      <button type="submit">저장</button>
+    </div>
+    <label for="title" style="font-weight: bold;">제목</label><br>
+    <input type="text" placeholder="제목을 입력하세요..."><br>
+
+    <div id="date-container">
+      <label for="date">기간</label><br>
+      <select id="year" name="year">
+        <option value="2021">2021</option>
+        <option value="2022">2022</option>
+        <option value="2023">2023</option>
+        <option value="2024">2024</option>
+      </select>
+
+      <select id="month" name="month">
+        <option value="1">1월</option>
+        <option value="2">2월</option>
+        <option value="3">3월</option>
+        <option value="4">4월</option>
+        <option value="5">5월</option>
+        <option value="6">6월</option>
+        <option value="7">7월</option>
+        <option value="8">8월</option>
+        <option value="9">9월</option>
+        <option value="10">10월</option>
+        <option value="11">11월</option>
+        <option value="12">12월</option>
+      </select>
+
+      <select id="day" name="day">
+        <option value="1">1일</option>
+        <option value="2">2일</option>
+        <option value="3">3일</option>
+        <option value="4">4일</option>
+        <option value="5">5일</option>
+        <option value="6">6일</option>
+        <option value="7">7일</option>
+        <option value="8">8일</option>
+        <option value="9">9일</option>
+        <option value="10">10일</option>
+        <option value="11">11일</option>
+        <option value="12">12일</option>
+        <option value="13">13일</option>
+        <option value="14">14일</option>
+        <option value="15">15일</option>
+        <option value="16">16일</option>
+        <option value="17">17일</option>
+        <option value="18">18일</option>
+        <option value="19">19일</option>
+        <option value="20">20일</option>
+        <option value="21">21일</option>
+        <option value="22">22일</option>
+        <option value="23">23일</option>
+        <option value="24">24일</option>
+        <option value="25">25일</option>
+        <option value="26">26일</option>
+        <option value="27">27일</option>
+        <option value="28">28일</option>
+        <option value="29">29일</option>
+        <option value="30">30일</option>
+        <option value="31">31일</option>
+      </select>
+      <select id="year" name="year">
+        <option value="2021">2021</option>
+        <option value="2022">2022</option>
+        <option value="2023">2023</option>
+        <option value="2024">2024</option>
+      </select>
+      <select id="month" name="month">
+        <option value="1">1월</option>
+        <option value="2">2월</option>
+        <option value="3">3월</option>
+        <option value="4">4월</option>
+        <option value="5">5월</option>
+        <option value="6">6월</option>
+        <option value="7">7월</option>
+        <option value="8">8월</option>
+        <option value="9">9월</option>
+        <option value="10">10월</option>
+        <option value="11">11월</option>
+        <option value="12">12월</option>
+      </select>
+      <select id="day" name="day">
+        <option value="1">1일</option>
+        <option value="2">2일</option>
+        <option value="3">3일</option>
+        <option value="4">4일</option>
+        <option value="5">5일</option>
+        <option value="6">6일</option>
+        <option value="7">7일</option>
+        <option value="8">8일</option>
+        <option value="9">9일</option>
+        <option value="10">10일</option>
+        <option value="11">11일</option>
+        <option value="12">12일</option>
+        <option value="13">13일</option>
+        <option value="14">14일</option>
+        <option value="15">15일</option>
+        <option value="16">16일</option>
+        <option value="17">17일</option>
+        <option value="18">18일</option>
+        <option value="19">19일</option>
+        <option value="20">20일</option>
+        <option value="21">21일</option>
+        <option value="22">22일</option>
+        <option value="23">23일</option>
+        <option value="24">24일</option>
+        <option value="25">25일</option>
+        <option value="26">26일</option>
+        <option value="27">27일</option>
+        <option value="28">28일</option>
+        <option value="29">29일</option>
+        <option value="30">30일</option>
+        <option value="31">31일</option>
+      </select>
+    </div>
+
+    <label for="title" style="font-weight: bold;">목표</label><br>
+    <div class="dropdown">
+      <button class="dropdown-btn">목표를 선택하세요...</button>
+      <div class="dropdown-submenu">
+        <a
+          href="https://www.google.com/search?q=%ED%83%9C%EA%B5%AD%EC%97%AC%ED%96%89&rlz=1C1YTUH_koKR1047KR1047&oq=%ED%83%9C%EA%B5%AD%EC%97%AC%ED%96%89&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTINCAEQLhiDARixAxiABDINCAIQABiDARixAxiABDIGCAMQABgDMg0IBBAAGIMBGLEDGIAEMg0IBRAAGIMBGLEDGIAEMg0IBhAAGIMBGLEDGIAEMg0IBxAAGIMBGLEDGIAEMg0ICBAAGIMBGLEDGIAEMg0ICRAAGIMBGLEDGIAE0gEIMTQzOWowajeoAgCwAgA&sourceid=chrome&ie=UTF-8">태국여행</a>
+        <a
+          href="https://www.google.com/search?q=%EA%B0%95%EB%A6%89%EC%97%AC%ED%96%89&rlz=1C1YTUH_koKR1047KR1047&sxsrf=AB5stBjDRisF8Kr-fWbAT3MBTQeQeed68g%3A1690512977599&ei=US7DZLyZJJOB1e8Pm8qN8Ac&ved=0ahUKEwj8hZLMs7CAAxWTQPUHHRtlA34Q4dUDCA8&uact=5&oq=%EA%B0%95%EB%A6%89%EC%97%AC%ED%96%89&gs_lp=Egxnd3Mtd2l6LXNlcnAiDOqwleumieyXrO2WiTIKEAAYgAQYFBiHAjIHEAAYigUYQzIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMg4QLhiABBjHARivARiYBTIFEAAYgAQyBRAAGIAESL4cUKQJWP0YcAN4AZABAZgBhQGgAY8NqgEEMC4xNLgBA8gBAPgBAagCCsICChAAGEcY1gQYsAPCAgcQIxiKBRgnwgIFEC4YgATCAggQLhiABBjUAsICEBAuGIAEGBQYhwIYsQMYgwHCAgcQIxjqAhgnwgIEECMYJ8ICCxAuGIAEGLEDGIMBwgILEAAYgAQYsQMYgwHCAggQLhiABBixA8ICBBAuGAPCAg0QLhiKBRjHARivARhDwgILEC4YgAQYxwEYrwHiAwQYACBBiAYBkAYK&sclient=gws-wiz-serp">강릉
+          여행</a>
+        <a
+          href="https://www.google.com/search?q=%EC%A0%84%EC%A3%BC%EC%97%AC%ED%96%89&rlz=1C1YTUH_koKR1047KR1047&sxsrf=AB5stBhcgtF7VL7Q8A7_Bthlyq2-Lpz7gw%3A1690512995038&ei=Yy7DZKnvAdXo-AbYi6HQDw&ved=0ahUKEwjprLrUs7CAAxVVNN4KHdhFCPoQ4dUDCA8&uact=5&oq=%EC%A0%84%EC%A3%BC%EC%97%AC%ED%96%89&gs_lp=Egxnd3Mtd2l6LXNlcnAiDOyghOyjvOyXrO2WiTIGEAAYBxgeMgYQABgHGB4yBhAAGAcYHjIGEAAYBxgeMgYQABgHGB4yBhAAGAcYHjIGEAAYBxgeMgYQABgHGB4yBhAAGAcYHjIGEAAYBxgeSJsLUPMEWJ4KcAJ4AZABAZgBeqABuQWqAQMwLja4AQPIAQD4AQHCAgoQABhHGNYEGLADwgIHECMYigUYJ8ICBBAjGCfCAgcQABiKBRhDwgILEAAYgAQYsQMYgwHCAggQABiABBixA8ICCxAuGIAEGMcBGK8B4gMEGAAgQYgGAZAGCg&sclient=gws-wiz-serp">전주
+          여행</a>
+        <a
+          href="https://www.google.com/search?q=%ED%94%84%EB%9E%91%EC%8A%A4%EC%97%AC%ED%96%89&rlz=1C1YTUH_koKR1047KR1047&sxsrf=AB5stBh1kFLO5DVN36l1VTGbW39xihIBHA%3A1690513025578&ei=gS7DZOL3IpSo-QaF-JnwAQ&ved=0ahUKEwiivILjs7CAAxUUVN4KHQV8Bh4Q4dUDCA8&uact=5&oq=%ED%94%84%EB%9E%91%EC%8A%A4%EC%97%AC%ED%96%89&gs_lp=Egxnd3Mtd2l6LXNlcnAiD-2UhOuekeyKpOyXrO2WiTIKEAAYgAQYFBiHAjIFEAAYgAQyBRAAGIAEMgoQABiABBgUGIcCMgUQABiABDIFEAAYgAQyBRAAGIAEMgYQABgHGB4yBhAAGAcYHjIGEAAYBxgeSI4MUOUEWJMLcAJ4AZABAZgBiwGgAdYIqgEDMC45uAEDyAEA-AEBwgIKEAAYRxjWBBiwA8ICBxAjGIoFGCfCAgQQIxgnwgIHEAAYigUYQ8ICCBAAGIAEGLEDwgILEAAYgAQYsQMYgwHCAgsQLhiABBjHARivAeIDBBgAIEGIBgGQBgo&sclient=gws-wiz-serp">프랑스
+          여행</a>
+        <a
+          href="https://www.google.com/search?q=%EC%98%81%EA%B5%AD%EC%97%AC%ED%96%89&rlz=1C1YTUH_koKR1047KR1047&sxsrf=AB5stBgCGmMxBD7jlMq0fsWJLj230vP6ug%3A1690513039206&ei=jy7DZLSWDILO1e8PrLqKwAM&ved=0ahUKEwj0mcLps7CAAxUCZ_UHHSydAjgQ4dUDCA8&uact=5&oq=%EC%98%81%EA%B5%AD%EC%97%AC%ED%96%89&gs_lp=Egxnd3Mtd2l6LXNlcnAiDOyYgeq1reyXrO2WiTIGEAAYBxgeMgYQABgHGB4yBhAAGAcYHjIGEAAYBxgeMgYQABgHGB4yBhAAGAcYHjIGEAAYBxgeMgYQABgHGB4yBhAAGAcYHjIGEAAYBxgeSMUXULsJWNYWcAJ4AZABAJgBgAGgAbMHqgEDMC44uAEDyAEA-AEBwgIKEAAYRxjWBBiwA8ICBRAAGKIEwgILEAAY8QQYiQUYogTCAgcQIxiKBRgnwgIEECMYJ8ICBxAAGIoFGEPCAggQABiABBixA8ICCxAAGIAEGLEDGIMBwgILEC4YgAQYxwEYrwHCAgUQABiABOIDBBgAIEGIBgGQBgo&sclient=gws-wiz-serp">영국
+          여행</a>
+        <a
+          href="https://www.google.com/search?q=%EB%B6%80%EB%8B%A4%ED%8E%98%EC%8A%A4%ED%8A%B8%EC%97%AC%ED%96%89&rlz=1C1YTUH_koKR1047KR1047&sxsrf=AB5stBjAnUtXZX9y5VML-OU1ZHqWFIBhHQ%3A1690513058800&ei=oi7DZPa4MIHW-Qbq55S4BQ&ved=0ahUKEwj2ke7ys7CAAxUBa94KHeozBVcQ4dUDCA8&uact=5&oq=%EB%B6%80%EB%8B%A4%ED%8E%98%EC%8A%A4%ED%8A%B8%EC%97%AC%ED%96%89&gs_lp=Egxnd3Mtd2l6LXNlcnAiFeu2gOuLpO2OmOyKpO2KuOyXrO2WiTIKEAAYgAQYFBiHAjIFEAAYgAQyBhAAGB4YDzIJEAAYBRgeGPEESI8RUOoFWLoQcAd4AZABBpgBpgGgAbQNqgEEMC4xNLgBA8gBAPgBAcICChAAGEcY1gQYsAPCAgcQIxiKBRgnwgIFEC4YgATCAggQLhiABBixA8ICCxAuGIAEGMcBGK8BwgILEAAYgAQYsQMYgwHCAggQABiABBixA8ICBxAAGIoFGEPCAgcQLhiKBRhD4gMEGAAgQYgGAZAGCg&sclient=gws-wiz-serp">부다페스트
+          여행</a>
+        <a
+          href="https://www.google.com/search?q=%EB%A7%88%EC%B6%94%ED%94%BD%EC%B6%94%EC%97%AC%ED%96%89&rlz=1C1YTUH_koKR1047KR1047&sxsrf=AB5stBii9947m_5RQNUtl-ZePVlgeCqnfQ%3A1690513087450&ei=vy7DZNaLG9ClhwOKzbyQBA&ved=0ahUKEwiW58KAtLCAAxXQ0mEKHYomD0IQ4dUDCA8&uact=5&oq=%EB%A7%88%EC%B6%94%ED%94%BD%EC%B6%94%EC%97%AC%ED%96%89&gs_lp=Egxnd3Mtd2l6LXNlcnAiEuuniOy2lO2Uvey2lOyXrO2WiTIKEAAYRxjWBBiwAzIKEAAYRxjWBBiwAzIKEAAYRxjWBBiwAzIKEAAYRxjWBBiwAzIKEAAYRxjWBBiwAzIKEAAYRxjWBBiwAzIKEAAYRxjWBBiwAzIKEAAYRxjWBBiwAzIKEAAYRxjWBBiwAzIKEAAYRxjWBBiwA0j9BFCpBFipBHABeAGQAQCYAQCgAQCqAQC4AQPIAQD4AQHiAwQYACBBiAYBkAYK&sclient=gws-wiz-serp">마추픽추
+          여행</a>
+      </div>
+    </div>
+    <br>
+    <label for="title" style="font-weight: bold;">장소</label><br>
+    <input type="text" placeholder="장소를 입력하세요"><br>
+    <label for="title" style="font-weight: bold;">내용</label><br>
+    <input type="text" placeholder="내용을 입력하세요">
+</body>
+
+</html>

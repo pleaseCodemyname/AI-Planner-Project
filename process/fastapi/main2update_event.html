@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Update Event</title>
+</head>
+
+<body>
+  <h1>Update Event</h1>
+  <form action="/update_event/{{ event.title }}" method="post">
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" value="{{ event.title }}" required><br><br>
+
+    <label for="year">Year:</label>
+    <input type="number" id="year" name="year" value="{{ event.year }}" required><br><br>
+
+    <label for="month">Month:</label>
+    <input type="number" id="month" name="month" value="{{ event.month }}" required><br><br>
+
+    <label for="start_day">Start Day:</label>
+    <input type="number" id="start_day" name="start_day" value="{{ event.start_day }}" required><br><br>
+
+    <label for="end_day">End Day:</label>
+    <input type="number" id="end_day" name="end_day" value="{{ event.end_day }}" required><br><br>
+
+    <label for="goal">Goal:</label>
+    <input type="text" id="goal" name="goal" value="{{ event.goal }}" required><br><br>
+
+    <label for="place">Place:</label>
+    <input type="text" id="place" name="place" value="{{ event.place }}" required><br><br>
+
+    <label for="content">Content:</label>
+    <textarea id="content" name="content" required>{{ event.content }}</textarea><br><br>
+
+    <input type="submit" value="Update">
+  </form>
+</body>
+
+</html>

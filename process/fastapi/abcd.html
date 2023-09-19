@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Your head content -->
+</head>
+
+<body>
+  <h1>Update Event</h1>
+
+  <div id="eventInfo">
+    <!-- 이벤트 정보를 보여줄 영역 -->
+  </div>
+
+  <!-- Include Axios -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <script>
+    // 이벤트 정보를 가져와서 폼에 채우는 함수
+    async function loadEventInfo(title) {
+      try {
+        const response = await axios.get(`/get_one_event/?title=${encodeURIComponent(title)}`);
+        const event = response.data;
+
+        // 이벤트 정보를 보여주는 HTML을 생성하여 eventInfo 영역에 삽입
+        const eventInfoDiv = document.getElementById('eventInfo');
+        eventInfoDiv.innerHTML = `
+          <h2>${event.title}</h2>
+          <p>Year: ${event.year}</p>
+          <p>Month: ${event.month}</p>
+          <p>Start Day: ${event.start_day}</p>
+          <p>End Day: ${event.end_day}</p>
+          <p>Goal: ${event.goal}</p>
+          <p>Place: ${event.place}</p>
+          <p>Content: ${event.content}</p>
+          <form id="updateEventForm">
+            <input type="hidden" id="title" name="title" value="${event.title}">
+            <!-- 기존 정보를 보여주고 수정할 필드 추가 -->
+            <input type="number" id="year" name="year" value="${event.year}" required>
+            <input type="number" id="month" name="month" value="${event.month}" required>
+            <input type="text" id="goal" name="goal" value="${event.goal}" required>
+            <!-- 기타 필드들 추가 -->
+            <button type="submit">Update Event</button>
+          </form>
+        `;
+      } catch (error) {
+        console.error('Error loading event information:', error);
+      }
+    }
+
+    // Handle form submission for updating an event
+    const form = document.getElementById('updateEventForm');
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault(); // Prevent form submission
+
+      // Get form data
+      const formData = new FormData(form);
+      const eventData = {};
+      formData.forEach((value, key) => {
+        eventData[key] = value;
+      });
+
+      // Send a PUT request to update the event
+      try {
+        const titleToUpdate = eventData.title; // Get the title of the event to update
+        delete eventData.title; // Remove the title from the data, as it is not part of the event data
+
+        const response = await axios.put(`/update_event/${encodeURIComponent(titleToUpdate)}`, eventData);
+        // Do something with the response if needed
+        console.log(response.data);
+      } catch (error) {
+        // Handle errors, if any
+        console.error('Error updating event:', error);
+      }
+    });
+
+    // Load event information when the page is ready
+    document.addEventListener('DOMContentLoaded', () => {
+      const title = 'Your_Event_Title'; // 기존 이벤트의 title
+      loadEventInfo(title);
+    });
+  </script>
+</body>
+
+</html>

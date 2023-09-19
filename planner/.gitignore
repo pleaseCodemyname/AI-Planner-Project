@@ -1,0 +1,11 @@
+#node
+node/node_modules
+node/package*
+
+oauth/node_modules
+oauth/package*
+
+semantic-kernel/.env
+semantic-kernel/.venv
+
+secret.json

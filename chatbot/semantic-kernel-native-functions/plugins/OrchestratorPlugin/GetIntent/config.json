@@ -1,0 +1,31 @@
+{
+     "schema": 1,
+     "type": "completion",
+     "description": "사용자의 의도를 가져옵니다.",
+     "completion": {
+          "max_tokens": 500,
+          "temperature": 0.0,
+          "top_p": 0.0,
+          "presence_penalty": 0.0,
+          "frequency_penalty": 0.0
+     },
+     "input": {
+          "parameters": [
+               {
+                    "name": "input",
+                    "description": "사용자의 요청입니다.",
+                    "defaultValue": ""
+               },
+               {
+                    "name": "history",
+                    "description": "대화의 이력입니다.",
+                    "defaultValue": ""
+               },
+               {
+                    "name": "options",
+                    "description": "선택할 옵션 목록입니다.",
+                    "defaultValue": ""
+               }
+          ]
+     }
+}
